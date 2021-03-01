@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const MongoClient = require('mongodb');
 const ObjectId = MongoClient.ObjectId;
 let db = mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.set('useFindAndModify', false);
-
 
 module.exports = function (app) {
 
@@ -150,7 +148,6 @@ module.exports = function (app) {
         (error, data) => {
           if(!error && data){
             res.redirect(`/b/${data.board}/${threadId}`)
-            //res.redirect(`/b/${data.board}/${data.id}?new_reply_id=${newReply.id}`)
           }
           else {
             console.log(error)
@@ -179,7 +176,6 @@ module.exports = function (app) {
         (error, data) => {
           if(!error && data){
             console.log('data.replies: ' + data.replies[0]._id)
-            //res.redirect(`/b/${data.board}/`)
             res.redirect(`/b/${data.board}/?new_reply_id=${data.replies[0]._id}`)
           }
           else {

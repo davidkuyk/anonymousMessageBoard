@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>Anonymous Message Board</title>
-    <meta name="description" content="freeCodeCamp project boilerplate">
-    <link id="favicon" rel="icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon">
+    <meta name="description" content="Anonymous Message Board">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,9 +15,7 @@
     <br>
     
     <div id='boardDisplay'></div>
-    
-    <hr style='margin: 50px; margin-top: 200px'>
-    <!-- Your web-app is https, so your scripts need to be too -->
+
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
             integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
             crossorigin="anonymous"></script>
@@ -36,10 +33,7 @@
           success: function(ele)
           {
             var boardThreads= [];
-            //
-            // THIS ARRAY SET UP IS FOR CODE READABILITIES AND TESTING!
-            // THIS IS NOT WHAT IT WOULD LOOK LIKE TO GO LIVE
-            //
+
               console.log(ele[0])
               console.log(ele[0].replies);
               var thread = ['<div class="thread">'];
@@ -49,14 +43,16 @@
               thread.push('<form id="deleteThread"><input type="hidden" value="'+ele[0]._id+'" name="thread_id" required=""><input type="text" placeholder="password" name="delete_password" required=""><input type="submit" value="Delete"></form>');
               thread.push('<h3>'+ele[0].text+'</h3>');
               thread.push('</div><div class="replies">');
+
               ele[0].replies.forEach(function(rep) {
                 thread.push('<div class="reply">')
                 thread.push('<p class="id">id: '+rep._id+' ('+rep.created_on+')</p>');
                 thread.push('<form id="reportReply"><input type="hidden" name="thread_id" value="'+ele._id+'"><input type="hidden" name="reply_id" value="'+rep._id+'"><input type="submit" value="Report"></form>');
                 thread.push('<form id="deleteReply"><input type="hidden" value="'+ele[0]._id+'" name="thread_id" required=""><input type="hidden" value="'+rep._id+'" name="reply_id" required=""><input type="text" placeholder="password" name="delete_password" required=""><input type="submit" value="Delete"></form>');
-                thread.push('<p>'+rep.text+'</p>');
+                thread.push('<p class="replytext">'+rep.text+'</p>');
                 thread.push('</div>')
               });
+
               thread.push('<div class="newReply">')
               thread.push('<form action="/api/replies/:board/:thread" method="post" id="newReply">');
               thread.push('<input type="hidden" name="thread_id" value="'+ele[0]._id+'">');
