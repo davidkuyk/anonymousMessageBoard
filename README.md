@@ -2,8 +2,6 @@
 
 [![GitHub version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/davidkuyk/anonymousMessageBoard)
 [![License](https://img.shields.io/github/license/davidkuyk/anonymousMessageBoard.svg)](https://github.com/davidkuyk/anonymousMessageBoard/blob/main/LICENSE)
-[![Backers on Patreon](https://img.shields.io/badge/backer-Patreon-orange.svg)](https://www.patreon.com/davidkuyk)
-[![Backers on Paypal](https://img.shields.io/badge/backer-Paypal-blue.svg)](https://www.paypal.me/davidkuyk)
 
 A full stack Javascript anonymous message board.
 ## Table of Contents
