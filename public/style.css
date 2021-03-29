@@ -1,26 +1,108 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  color: #EEFBFB;
+  color: #eefbfb;
   font-family: Arial, sans-serif;
 }
 
+header {
+  margin: auto;
+  text-align: center;
+}
+
 body {
-  padding: 10px;
-  background-color: #12232E;
+  padding: 20px;
+  background-color: #12232e;
+  width: 90%;
+  margin: auto;
 }
 
-p, textarea, input {
-  font-size: 14px;
+p,
+textarea,
+input {
+  font-size: 18px;
 }
 
-textarea, input[type="text" i] {
+textarea {
+  width: 400px;
+  height: 100px;
+}
+
+#newThread textarea,
+#newReply textarea {
+  width: 90%;
+}
+
+@media screen and (max-width: 600px) {
+  #newThread textarea,
+  #newReply textarea {
+    width: 80%;
+  }
+}
+
+#testui {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: fit-content;
+}
+
+.thread-groups,
+.reply-groups {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .thread-groups,
+  .reply-groups {
+    width: 99%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #testui {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 99%;
+  }
+}
+
+.group {
+  border: 1px solid rgb(87, 87, 87);
+  width: 500px;
+  height: 400px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .group {
+    border: 1px solid rgb(87, 87, 87);
+    width: 99%;
+    height: auto;
+    padding: 5px;
+  }
+}
+
+textarea,
+input[type='text' i] {
   background-color: #151515;
   border: none;
+  margin: 10px;
+  border: 1px solid rgb(87, 87, 87);
 }
 
-input[type="submit" i] {
+input[type='submit' i] {
+  color: #a9a9a9;
   background-color: #151515;
+  margin: 5px 10px;
+  border: 1px solid rgb(87, 87, 87);
 }
 
 .reply {
@@ -37,9 +119,16 @@ input[type="submit" i] {
   border: 2px solid #151515;
   padding: 5px;
   margin-bottom: 5px;
+  margin-left: 10px;
 }
 
-.replycount, a {
+#boardDisplay {
+  width: 99%;
+  margin: auto;
+}
+
+.replycount,
+a {
   color: #a9a9a9;
 }
 
@@ -55,22 +144,19 @@ input[type="submit" i] {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 22px;
+  display: inline;
+  padding-left: 10px;
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 18px;
   padding: 10px;
 }
 
 h4 {
   font-size: 20px;
   padding: 5px;
-}
-
-input[type="submit" i] {
-  background-color: #12232E;
-  color: #a9a9a9;
 }
 
 .replytext {

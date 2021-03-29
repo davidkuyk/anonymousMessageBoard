@@ -7,15 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   </head>
   <body>
     <header>
-      <h1>
-        Anonymous Message Board
-      </h1>
+      <i class="fab fa-forumbee"></i><h1>Anonymous Message Board</h1>
+      <h2><a href="https://messageboard.davidkuyk.repl.co/b/test/">Go to test board</a></h2>
     </header>
-    <h2><a href="https://messageboard.davidkuyk.repl.co/b/test/">Go to test board</a></h2>
     <div id='testui'>
+      <div class='thread-groups'>
+      <div class='group'>
         <h4>New thread</h4>
         <form action="/api/threads/:board" method="post" id="newThread">
           <input type='text' placeholder='board' id='board1' name='board' required=''><br>
@@ -23,14 +25,18 @@
           <input type='text' placeholder='password to delete' name='delete_password' required=''><br>
           <input type="submit" value="Submit">
         </form>
-
+      </div>
+      
+      <div class='group'>
         <h4>Report thread</h4>
         <form id="reportThread">
           <input type='text' placeholder='board' id='board2' name='board' required=''><br>
           <input type='text' placeholder='id to report' name='thread_id' required=''><br>
           <input type="submit" value="Submit">
         </form>
+      </div>
 
+      <div class='group'>
         <h4>Delete thread</h4>
         <form id="deleteThread">
           <input type='text' placeholder='board' id='board3' name='board' required=''><br>
@@ -38,7 +44,11 @@
           <input type='text' placeholder='password' name='delete_password' required=''><br>
           <input type="submit" value="Submit">
         </form>
-        
+      </div>
+      </div>
+
+    <div class='reply-groups'>
+      <div class='group'>
         <h4>New reply</h4>
         <form id="newReply">
           <input type='text' placeholder='board' id='board4' name='board' required=''><br>
@@ -47,7 +57,9 @@
           <input type='text' placeholder='password to delete' name='delete_password' required=''><br>
           <input type="submit" value="Submit">
         </form>
+      </div>
 
+      <div class='group'>
         <h4>Report reply</h4>
         <form id="reportReply">
           <input type='text' placeholder='board' id='board5' name='board' required=''><br>
@@ -55,7 +67,9 @@
           <input type='text' placeholder='id to report' name='reply_id' required=''><br>
           <input type="submit" value="Submit">
         </form>
+      </div>
 
+      <div class='group'>
         <h4>Delete reply</h4>
         <form id="deleteReply">
           <input type='text' placeholder='board' id='board6' name='board' required=''><br>
@@ -63,7 +77,9 @@
           <input type='text' placeholder='reply id' name='reply_id' required=''><br>
           <input type='text' placeholder='password' name='delete_password' required=''><br>
           <input type="submit" value="Submit">
-        </form>        
+        </form> 
+      </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
